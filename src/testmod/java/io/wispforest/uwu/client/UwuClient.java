@@ -1,8 +1,5 @@
 package io.wispforest.uwu.client;
 
-import io.wispforest.owo.network.OwoNetChannel;
-import io.wispforest.owo.particles.ClientParticles;
-import io.wispforest.owo.particles.systems.ParticleSystemController;
 import io.wispforest.owo.ui.component.ButtonComponent;
 import io.wispforest.owo.ui.component.Components;
 import io.wispforest.owo.ui.component.EntityComponent;
@@ -14,15 +11,11 @@ import io.wispforest.owo.ui.layers.Layer;
 import io.wispforest.owo.ui.layers.Layers;
 import io.wispforest.owo.ui.parsing.UIModel;
 import io.wispforest.owo.ui.util.UISounds;
-import io.wispforest.uwu.Uwu;
-import io.wispforest.uwu.network.UwuNetworkExample;
-import io.wispforest.uwu.network.UwuOptionalNetExample;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.GameMenuScreen;
-import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
@@ -30,7 +23,6 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.item.Items;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.Identifier;
@@ -44,10 +36,6 @@ public class UwuClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        UwuNetworkExample.Client.init();
-        UwuOptionalNetExample.Client.init();
-
-        HandledScreens.register(Uwu.EPIC_SCREEN_HANDLER_TYPE, EpicHandledScreen::new);
 //        HandledScreens.register(EPIC_SCREEN_HANDLER_TYPE, EpicHandledModelScreen::new);
 
         final var binding = new KeyBinding("key.uwu.hud_test", GLFW.GLFW_KEY_J, "misc");
@@ -82,34 +70,12 @@ public class UwuClient implements ClientModInitializer {
             }
 
             if (bindingButCooler.wasPressed()) {
-                Hud.remove(coolerComponentId);
-                Hud.add(coolerComponentId, coolerComponent);
-
-                //noinspection StatementWithEmptyBody
-                while (bindingButCooler.wasPressed()) {}
+                if (Hud.hasComponent(coolerComponentId)) {
+                    Hud.remove(coolerComponentId);
+                } else {
+                    Hud.add(coolerComponentId, coolerComponent);
+                }
             }
-        });
-
-        Uwu.CHANNEL.registerClientbound(Uwu.OtherTestMessage.class, (message, access) -> {
-            access.player().sendMessage(Text.of("Message '" + message.message() + "' from " + message.pos()), false);
-        });
-
-        if (Uwu.WE_TESTEN_HANDSHAKE) {
-            OwoNetChannel.create(new Identifier("uwu", "client_only_channel"));
-
-            Uwu.CHANNEL.registerServerbound(WeirdMessage.class, (data, access) -> {
-            });
-            Uwu.CHANNEL.registerClientbound(WeirdMessage.class, (data, access) -> {
-            });
-
-            new ParticleSystemController(new Identifier("uwu", "client_only_particles"));
-            Uwu.PARTICLE_CONTROLLER.register(WeirdMessage.class, (world, pos, data) -> {
-            });
-        }
-
-        Uwu.CUBE.setHandler((world, pos, data) -> {
-            ClientParticles.setParticleCount(5);
-            ClientParticles.spawnCubeOutline(ParticleTypes.END_ROD, world, pos, 1, .01f);
         });
 
         Layers.add(Containers::verticalFlow, instance -> {

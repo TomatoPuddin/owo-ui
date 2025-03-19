@@ -3,7 +3,7 @@ package io.wispforest.owo.ui.core;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import io.wispforest.owo.Owo;
-import io.wispforest.owo.renderdoc.RenderDoc;
+import io.wispforest.owo.mixin.ui.access.ScreenAccessor;
 import io.wispforest.owo.ui.util.CursorAdapter;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -37,7 +37,6 @@ public class OwoUIAdapter<R extends ParentComponent> implements Element, Drawabl
     public final CursorAdapter cursorAdapter;
 
     protected boolean disposed = false;
-    protected boolean captureFrame = false;
 
     protected int x, y;
     protected int width, height;
@@ -70,7 +69,7 @@ public class OwoUIAdapter<R extends ParentComponent> implements Element, Drawabl
         var rootComponent = rootComponentMaker.apply(Sizing.fill(100), Sizing.fill(100));
 
         var adapter = new OwoUIAdapter<>(0, 0, screen.width, screen.height, rootComponent);
-        screen.addDrawableChild(adapter);
+        ((ScreenAccessor) screen).owoui$addDrawableChild(adapter);
         screen.focusOn(adapter);
 
         return adapter;
@@ -164,8 +163,6 @@ public class OwoUIAdapter<R extends ParentComponent> implements Element, Drawabl
         try {
             isRendering = true;
 
-            if (this.captureFrame) RenderDoc.startFrameCapture();
-
             final var delta = MinecraftClient.getInstance().getLastFrameDuration();
             final var window = MinecraftClient.getInstance().getWindow();
 
@@ -192,11 +189,8 @@ public class OwoUIAdapter<R extends ParentComponent> implements Element, Drawabl
                 owoContext.drawInspector(this.rootComponent, mouseX, mouseY, !this.globalInspector);
                 context.getMatrices().translate(0, 0, -this.inspectorZOffset);
             }
-
-            if (this.captureFrame) RenderDoc.endFrameCapture();
         } finally {
             isRendering = false;
-            this.captureFrame = false;
         }
     }
 
@@ -240,12 +234,6 @@ public class OwoUIAdapter<R extends ParentComponent> implements Element, Drawabl
                 this.toggleInspector();
             } else if ((modifiers & GLFW.GLFW_MOD_ALT) != 0) {
                 this.toggleGlobalInspector();
-            }
-        }
-
-        if (Owo.DEBUG && keyCode == GLFW.GLFW_KEY_R && RenderDoc.isAvailable()) {
-            if ((modifiers & GLFW.GLFW_MOD_ALT) != 0 && (modifiers & GLFW.GLFW_MOD_CONTROL) != 0) {
-                this.captureFrame = true;
             }
         }
 

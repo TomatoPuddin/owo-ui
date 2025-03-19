@@ -19,15 +19,6 @@
     ],
     "main": [
       "io.wispforest.owo.Owo"
-    ],
-    "rei_client": [
-      "io.wispforest.owo.compat.rei.OwoReiPlugin"
-    ],
-    "emi": [
-      "io.wispforest.owo.compat.emi.OwoEmiPlugin"
-    ],
-    "modmenu": [
-      "io.wispforest.owo.compat.modmenu.OwoModMenuPlugin"
     ]
   },
   "mixins": [
@@ -44,29 +35,12 @@
     "minecraft": ">=1.19"
   },
   "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.discord": "https://discord.gg/xrwHKktV2d"
-      },
-      "badges": [
-        "library"
-      ]
-    },
     "loom:injected_interfaces": {
-      "net/minecraft/class_1799": [
-        "io/wispforest/owo/nbt/NbtCarrier"
-      ],
-      "net/minecraft/class_2487": [
-        "io/wispforest/owo/nbt/NbtCarrier"
-      ],
       "net/minecraft/class_339": [
         "io/wispforest/owo/ui/inject/ComponentStub"
       ],
       "net/minecraft/class_342": [
         "io/wispforest/owo/ui/inject/GreedyInputComponent"
-      ],
-      "net/minecraft/class_1703": [
-        "io/wispforest/owo/client/screens/OwoScreenHandler"
       ],
       "net/minecraft/class_332": [
         "io/wispforest/owo/util/pond/MatrixStackTransformer"
