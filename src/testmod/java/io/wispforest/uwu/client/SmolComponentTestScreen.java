@@ -1,9 +1,9 @@
 package io.wispforest.uwu.client;
 
-import io.wispforest.owo.ui.base.BaseUIModelScreen;
-import io.wispforest.owo.ui.component.SlimSliderComponent;
-import io.wispforest.owo.ui.container.FlowLayout;
-import io.wispforest.owo.ui.core.Insets;
+import io.wispforest.owoui.ui.base.BaseUIModelScreen;
+import io.wispforest.owoui.ui.component.SlimSliderComponent;
+import io.wispforest.owoui.ui.container.FlowLayout;
+import io.wispforest.owoui.ui.core.Insets;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "owo",
+  "id": "owoui",
   "version": "${version}",
-  "name": "oωo",
+  "name": "oωo-ui",
   "description": "yes its bad i know thanks",
   "authors": [
     "glisco",
@@ -11,24 +11,24 @@
   ],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/owo/icon.png",
+  "icon": "assets/owoui/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "io.wispforest.owo.client.OwoClient"
+      "io.wispforest.owoui.client.OwoClient"
     ],
     "main": [
-      "io.wispforest.owo.Owo"
+      "io.wispforest.owoui.Owo"
     ]
   },
   "mixins": [
-    "owo.mixins.json"
+    "owoui.mixins.json"
   ],
   "provides": [
-    "owo-impl",
-    "owo-lib"
+    "owoui-impl",
+    "owoui-lib"
   ],
-  "accessWidener": "owo.accesswidener",
+  "accessWidener": "owoui.accesswidener",
   "depends": {
     "fabricloader": "*",
     "fabric": ">=0.76",
@@ -37,13 +37,13 @@
   "custom": {
     "loom:injected_interfaces": {
       "net/minecraft/class_339": [
-        "io/wispforest/owo/ui/inject/ComponentStub"
+        "io/wispforest/owoui/ui/inject/ComponentStub"
       ],
       "net/minecraft/class_342": [
-        "io/wispforest/owo/ui/inject/GreedyInputComponent"
+        "io/wispforest/owoui/ui/inject/GreedyInputComponent"
       ],
       "net/minecraft/class_332": [
-        "io/wispforest/owo/util/pond/MatrixStackTransformer"
+        "io/wispforest/owoui/util/pond/MatrixStackTransformer"
       ]
     }
   }

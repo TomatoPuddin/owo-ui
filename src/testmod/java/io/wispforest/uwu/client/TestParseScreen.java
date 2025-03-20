@@ -1,10 +1,10 @@
 package io.wispforest.uwu.client;
 
-import io.wispforest.owo.ui.base.BaseUIModelScreen;
-import io.wispforest.owo.ui.component.*;
-import io.wispforest.owo.ui.container.FlowLayout;
-import io.wispforest.owo.ui.container.ScrollContainer;
-import io.wispforest.owo.ui.core.*;
+import io.wispforest.owoui.ui.base.BaseUIModelScreen;
+import io.wispforest.owoui.ui.component.*;
+import io.wispforest.owoui.ui.container.FlowLayout;
+import io.wispforest.owoui.ui.container.ScrollContainer;
+import io.wispforest.owoui.ui.core.*;
 import net.minecraft.text.Text;
 
 public class TestParseScreen extends BaseUIModelScreen<FlowLayout> {

@@ -1,12 +1,12 @@
 package io.wispforest.uwu.client;
 
 import com.mojang.authlib.GameProfile;
-import io.wispforest.owo.ui.component.*;
-import io.wispforest.owo.ui.container.Containers;
-import io.wispforest.owo.ui.container.FlowLayout;
-import io.wispforest.owo.ui.container.RenderEffectWrapper;
-import io.wispforest.owo.ui.container.ScrollContainer;
-import io.wispforest.owo.ui.core.*;
+import io.wispforest.owoui.ui.component.*;
+import io.wispforest.owoui.ui.container.Containers;
+import io.wispforest.owoui.ui.container.FlowLayout;
+import io.wispforest.owoui.ui.container.RenderEffectWrapper;
+import io.wispforest.owoui.ui.container.ScrollContainer;
+import io.wispforest.owoui.ui.core.*;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -15,7 +15,6 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.tooltip.Tooltip;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.SpriteIdentifier;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;

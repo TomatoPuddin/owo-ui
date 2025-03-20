@@ -1,10 +1,10 @@
 package io.wispforest.uwu.client;
 
-import io.wispforest.owo.ui.base.BaseUIModelScreen;
-import io.wispforest.owo.ui.component.ButtonComponent;
-import io.wispforest.owo.ui.component.SliderComponent;
-import io.wispforest.owo.ui.container.FlowLayout;
-import io.wispforest.owo.ui.core.Component;
+import io.wispforest.owoui.ui.base.BaseUIModelScreen;
+import io.wispforest.owoui.ui.component.ButtonComponent;
+import io.wispforest.owoui.ui.component.SliderComponent;
+import io.wispforest.owoui.ui.container.FlowLayout;
+import io.wispforest.owoui.ui.core.Component;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 
 import java.util.Map;

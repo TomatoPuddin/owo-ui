@@ -1,0 +1,34 @@
+{
+  "text.owoui.configure_hot_reload.title": "Configure Hot Reload",
+  "text.owoui.configure_hot_reload.choose_file": "Choose file",
+  "text.owoui.configure_hot_reload.choose_ui_model_source": "Choose UI Model source",
+  "text.owoui.configure_hot_reload.save": "Save",
+  "text.owoui.configure_hot_reload.model": [
+    {"text": "Model: ", "color": "yellow"},
+    {"index": 0, "color": "gray"}
+  ],
+  "text.owoui.configure_hot_reload.reload_from.unset": "Unset",
+  "text.owoui.configure_hot_reload.reload_from": [
+    {"text": "Reload from: ", "color": "yellow"},
+    {"index": 0, "color": "gray"}
+  ],
+  "text.owoui.config.button.range.edit_as_text": "Edit as text",
+  "text.owoui.config.button.reload": "Reload",
+  "text.owoui.config.button.done": "Done",
+  "text.owoui.config.sections": {"text": "Sections", "underlined": true},
+  "text.owoui.config.list.add_entry": "Add entry",
+  "text.owoui.config.boolean_toggle.enabled": [
+    "",
+    {"text": "[", "color": "gray"},
+    {"text": "✔", "color": "#28FFBF"},
+    {"text": "]", "color": "gray"},
+    " Enabled"
+  ],
+  "text.owoui.config.boolean_toggle.disabled": [
+    "",
+    {"text": "[", "color": "gray"},
+    {"text": "❌", "color": "#EB1D36"},
+    {"text": "]", "color": "gray"},
+    " Disabled"
+  ]
+}

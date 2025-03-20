@@ -22,6 +22,6 @@
     "fabricloader": "*",
     "fabric": "*",
     "minecraft": ">=1.18-alpha.21.40.a",
-    "owo": "*"
+    "owoui": "*"
   }
 }

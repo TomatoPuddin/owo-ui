@@ -111,7 +111,7 @@ loom {
         }
     }
 
-    accessWidenerPath = file("src/main/resources/owo.accesswidener")
+    accessWidenerPath = file("src/main/resources/owoui.accesswidener")
 }
 
 dependencies {

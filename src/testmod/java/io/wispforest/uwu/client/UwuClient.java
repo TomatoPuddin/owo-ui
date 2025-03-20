@@ -1,16 +1,16 @@
 package io.wispforest.uwu.client;
 
-import io.wispforest.owo.ui.component.ButtonComponent;
-import io.wispforest.owo.ui.component.Components;
-import io.wispforest.owo.ui.component.EntityComponent;
-import io.wispforest.owo.ui.container.Containers;
-import io.wispforest.owo.ui.container.FlowLayout;
-import io.wispforest.owo.ui.core.*;
-import io.wispforest.owo.ui.hud.Hud;
-import io.wispforest.owo.ui.layers.Layer;
-import io.wispforest.owo.ui.layers.Layers;
-import io.wispforest.owo.ui.parsing.UIModel;
-import io.wispforest.owo.ui.util.UISounds;
+import io.wispforest.owoui.ui.component.ButtonComponent;
+import io.wispforest.owoui.ui.component.Components;
+import io.wispforest.owoui.ui.component.EntityComponent;
+import io.wispforest.owoui.ui.container.Containers;
+import io.wispforest.owoui.ui.container.FlowLayout;
+import io.wispforest.owoui.ui.core.*;
+import io.wispforest.owoui.ui.hud.Hud;
+import io.wispforest.owoui.ui.layers.Layer;
+import io.wispforest.owoui.ui.layers.Layers;
+import io.wispforest.owoui.ui.parsing.UIModel;
+import io.wispforest.owoui.ui.util.UISounds;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
