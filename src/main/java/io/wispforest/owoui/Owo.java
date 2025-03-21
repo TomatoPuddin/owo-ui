@@ -1,7 +1,6 @@
 package io.wispforest.owoui;
 
 import io.wispforest.owoui.command.debug.OwoDebugCommands;
-import io.wispforest.owoui.text.InsertingTextContent;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.loader.api.FabricLoader;
@@ -44,8 +43,6 @@ public class Owo implements ModInitializer {
     @Override
     @ApiStatus.Internal
     public void onInitialize() {
-        InsertingTextContent.init();
-
         ServerLifecycleEvents.SERVER_STARTING.register(server -> SERVER = server);
         ServerLifecycleEvents.SERVER_STOPPED.register(server -> SERVER = null);
 

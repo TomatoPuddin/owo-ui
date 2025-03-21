@@ -1,6 +1,7 @@
 package io.wispforest.owoui.mixin.tweaks;
 
 import io.wispforest.owoui.Owo;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.text.Text;
@@ -23,7 +24,7 @@ public abstract class TextFieldWidgetMixin extends ClickableWidget {
 
     @Inject(method = "getWordSkipPosition(IIZ)I", at = @At("HEAD"), cancellable = true)
     private void iProvideUsefulSeparators(int wordOffset, int cursorPosition, boolean skipOverSpaces, CallbackInfoReturnable<Integer> cir) {
-        if (!Owo.DEBUG) return;
+        if (!Owo.DEBUG || FabricLoader.getInstance().isModLoaded("owo")) return;
 
         int wordsToSkip = Math.abs(wordOffset);
         boolean forward = wordOffset > 0;
